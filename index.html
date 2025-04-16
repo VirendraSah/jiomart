@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>JioMart: India's online shopping destination</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Owl Carousel CSS (CDN version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style/styles.css" type="text/css">
+    <link rel="stylesheet" href="style/media.css" type="text/css">
+</head>
+<body>
+    <div class="popoverbg-dark position-fixed border border-1 border-danger start-0 top-0 bg-black opacity-25 d-none z-3"
+        style="width: 100%; height: 100%;"></div>
+    <header class="container-fluid bluecolor py-3 px-2 px-md-0 mx-0 z-5 position-sticky z-3">
+        <div class="container px-0">
+            <div class="row w-100 m-0 px-0">
+                <ul class="list-unstyled d-flex align-items-center gap-5 mb-0 px-0 position-relative">
+                    <li class="">
+                        <img src="images/Jiomart-logo-ds2.0.webp" alt="jiomart logo">
+                    </li>
+                    <li class="d-none d-lg-block">
+                        <button type="button"
+                            class="btn d-flex align-items-center justify-content-start gap-1 fw-bold text-light HoverBg px-3 py-1 rounded-pill border-0 bg-color onclickDisplaypopover">
+                            <i class="fa-solid fa-location-dot fs-6 fs12pxAll"></i>
+                            <p class="py-0 my-0 fs-6 fs12pxAll">Deliver to <span
+                                    class="fw-bold fs14pxAll deliverylocation">Mumbai
+                                    400020</span></p>
+                        </button>
+                        <!-- For Desktop -->
+                        <div class="popoverElement position-absolute start-0 rounded-4 p-4 bg-light d-none z-3"
+                            style="top: 50px;">
+                            <i class="fa-solid fa-sort-up fs-1 text-light position-absolute minustop"></i>
+                            <h3 class="h4 fw-bolder"><strong>Select Delivery Location</strong></h3>
+                            <p class="mediumDark-color fw-medium fs-6">Sign in or set delivery location to see product
+                                availability, offers and discounts.</p>
+                            <button class="btn btn-primary bluecolor fw-bold text-light w-100 py-3 rounded-pill"
+                                type="button">Sign In to select address</button>
+                            <div
+                                class="d-flex gap-3 align-items-center justify-content-start pt-4 mx-3 fw-bold text-blue list-unstyled">
+                                <button
+                                    class="d-flex gap-3 p-2 align-items-center rounded-pill HoverBgopacity border-0 btn Enterpincodebtn text-blue">
+                                    <i class="fa-solid fa-location-dot fs-4"></i>
+                                    <p class="m-0 fs-6 fw-bold">Enter a pincode</p>
+                                </button>
+                            </div>
+                            <div
+                                class="d-flex flex-column gap-3 align-items-start justify-content-center mt-2 mx-3 mb-3 fw-bold text-blue list-unstyled">
+                                <button
+                                    class="d-flex gap-3 p-2 align-items-center rounded-pill HoverBgopacity border-0 btn DetectLocationbtn text-blue">
+                                    <i class="fa-solid fa-location-crosshairs fs-4"></i>
+                                    <p class="m-0 fs-6 fw-bold detectLocation">Detect My Location</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="popoverElement position-absolute start-0 rounded-4 p-4 bg-light d-none getuserpincode z-3"
+                            style="top: 50px;">
+                            <i class="fa-solid fa-sort-up fs-1 text-light position-absolute minustop"></i>
+                            <h3 class="h4 fw-bolder"><strong>Enter PIN Code</strong></h3>
+                            <p class="mediumDark-color fw-bold fs-6">Enter PIN code to see product availability, offers
+                                and discounts.</p>
+                            <div
+                                class="PincodeinputBar d-flex flex-column justify-content-center gap-1 getuserpincodeform">
+                                <span class="fw-bold fs-6 mediumDark-color">PIN Code</span>
+                                <div class="d-flex align-items-center gap-5">
+                                    <div
+                                        class="w-100 d-flex align-items-center border-bottom border-2 border-MediumDark pb-2 changebordercolor">
+                                        <i class="fa-solid fa-location-dot fs-4 opacity-75"></i>
+                                        <input type="number" name="pincode" id="getPincode"
+                                            class="flex-grow-1 bg-transparent outline-none border-0 px-3 fw-bold placeholderopacity"
+                                            placeholder="Enter your Pincode" pattern="/^-?\d+\.?\d*$/"
+                                            id="getPincode" />
+                                    </div>
+                                    <button
+                                        class="btn btn-primary bluecolor fw-bold text-light py-2 rounded-pill opacity-25"
+                                        type="submit" id="pincodesubmitBtn">Apply</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="fw-semibold text-blue cityView">
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex-grow-1">
+                        <div class="darkgrey px-3 py-2 rounded-pill d-flex align-items-center">
+                            <ul class="list-unstyled d-flex align-items-center flex-grow-1 position-relative">
+                                <li>
+                                    <i class="fa-solid fa-magnifying-glass text-light"></i>
+                                </li>
+                                <li class="w-100 flex-grow-1 d-none d-lg-block">
+                                    <input type="text" id="search-input"
+                                        class="w-100 border-0 bg-transparent outline-none px-3 text-light fw-bold placeholder white-Placeholder"
+                                        placeholder="Search Jiomart">
+                                </li>
+                                <li class="w-100 flex-grow-1 d-block d-lg-none">
+                                    <input type="text" id="search-input"
+                                        class="w-100 border-0 bg-transparent outline-none px-3 text-light fw-bold placeholder white-Placeholder"
+                                        placeholder="Search Jiomart">
+                                </li>
+                                <!-- desktop list icon -->
+                                <li id="shoppinglisticon" class="cursorpointer d-none d-lg-block">
+                                    <img src="images/ds-list-icon.webp" class="d-block" alt="ds-list-icon">
+                                </li>
+                                <!-- MObile list icon -->
+                                <li class="cursorpointer d-block d-lg-none" id="mobilelistbutton">
+                                    <img src="images/ds-list-icon.webp" class="d-block" alt="ds-list-icon">
+                                </li>
+                                <div class="inputPopover p-3 bg-light rounded-4 vh-100 d-none z-3">
+                                    <div class="w-auto">
+                                        <h3 class="fs-6 fw-bolder">Try something new</h3>
+                                        <ul class="list-unstyled d-flex flex-wrap w-100 column-gap-1 row-gap-2">
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">biscuits</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">curd</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">atta</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">maggi</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">bread</button>
+                                            </li>
+                                            <li>
+                                                <button class="btn rounded-pill removehoverEffect py-0 fw-semibold">surf
+                                                    excel powder</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">paneer</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">cheese</button>
+                                            </li>
+                                            <li>
+                                                <button class="btn rounded-pill removehoverEffect py-0 fw-semibold">oil
+                                                    cooking</button>
+                                            </li>
+                                            <li>
+                                                <button
+                                                    class="btn rounded-pill removehoverEffect py-0 fw-semibold">chips</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="w-100">
+                                        <h3 class="fs-6 fw-bolder mt-4">Most trending categories</h3>
+                                        <ul
+                                            class="list-unstyled d-flex flex-nowrap w-100 column-gap-3 row-gap-2 overflow-scroll overflow-y-hidden overflow-x-scroll overflowscrollnone">
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/electronics.webp" alt="electronics" class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Electronics</span>
+                                            </li>
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/fashion.webp" alt="fashion" class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Fashion</span>
+                                            </li>
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/grocery.webp" alt="grocery" class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Groceries</span>
+                                            </li>
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/home_kitchen.webp" alt="home_kitchen" class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Home & Kitchen</span>
+                                            </li>
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/home_improvement.webp" alt="Home Improvement"
+                                                    class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Home Improvement</span>
+                                            </li>
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/jewellery.webp" alt="Jewellery" class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Jewellery</span>
+                                            </li>
+                                            <li class="d-flex flex-column justify-content-center align-items-center">
+                                                <img src="images/Wellness.webp" alt="Wellness" class="w-80px">
+                                                <span class="fw-bold W-maxcontent fs11pxall">Wellness</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="popoverElement position-absolute rounded-4 p-4 bg-light shoppingList d-none"
+                                    style="top: 50px; right: -250px;">
+                                    <i
+                                        class="fa-solid fa-sort-up fs-1 text-light position-absolute minustop left230px"></i>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h3 class="h4 fw-bolder m-0"><strong>Shopping List</strong></h3>
+                                        <button type="button" class="border-0 bg-transparent">
+                                            <img src="images/close-icon.webp"
+                                                class="w-100 d-block xmarkbtn rounded-circle p-1 closeShoppinglist"
+                                                alt="close-icon">
+                                        </button>
+                                    </div>
+                                    <p class="mediumDark-color fw-bold fs-6 mt-2">Search multiple products by entering
+                                        your shopping list below.</p>
+                                    <div class="">
+                                        <span class="fw-bold">Enter Item List</span>
+                                        <textarea id="itemTextarea"
+                                            class="w-100 border-0 bg-transparent outline-none m-0 pb-0 border-bottom border-2 darkbluebordercolor fw-bold placeholderopacity"
+                                            placeholder="e.g. Milk, Bread, Fruit"></textarea>
+                                        <span class="fw-bold fs14pxAll lineheightnone">Add comma as separator</span>
+                                    </div>
+                                    <div class="row mt-4 d-flex align-items-center">
+                                        <div class="col-6">
+                                            <button
+                                                class="btn rounded-pill removehoverEffect py-2 fw-bolder text-darkBlue w-100 clearbtn">Clear</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="button"
+                                                class="btn btn-primary w-100 py-2 rounded-pill fw-bolder text bluecolorbg">Search
+                                                All</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- For Mobile -->
+                                <div class="popoverElement position-fixed start-0 rounded-4 p-4 bg-light mx-3 d-none mobilesignupbtn z-3"
+                                    style="top: 70px;">
+                                    <i class="fa-solid fa-sort-up fs-1 text-light rightposition"></i>
+                                    <h3 class="h4 fw-bolder"><strong>Select Delivery Location</strong></h3>
+                                    <p class="mediumDark-color fw-medium fs-6">Sign in or set delivery location to see
+                                        product
+                                        availability, offers and discounts.</p>
+                                    <button class="btn btn-primary bluecolor fw-bold text-light w-100 py-3 rounded-pill"
+                                        type="button">Sign In to select address</button>
+                                    <div
+                                        class="d-flex gap-3 align-items-center justify-content-start pt-4 mx-3 fw-bold text-blue list-unstyled">
+                                        <button
+                                            class="d-flex gap-3 p-2 align-items-center rounded-pill HoverBgopacity border-0 btn Enterpincodebtn text-blue">
+                                            <i class="fa-solid fa-location-dot fs-4"></i>
+                                            <p class="m-0 fs-6 fw-bold">Enter a pincode</p>
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="d-flex flex-column gap-3 align-items-start justify-content-center mt-2 mx-3 mb-3 fw-bold text-blue list-unstyled">
+                                        <button
+                                            class="d-flex gap-3 p-2 align-items-center rounded-pill HoverBgopacity border-0 btn DetectLocationbtn text-blue">
+                                            <i class="fa-solid fa-location-crosshairs fs-4"></i>
+                                            <p class="m-0 fs-6 fw-bold detectLocation">Detect My Location</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="d-none d-lg-block">
+                        <img src="images/cart-icon.webp" class="d-block HoverBg p-2 rounded-circle" alt="cart-icon">
+                    </li>
+                    <li class="d-none d-md-block">
+                        <div class="HoverBg px-2 py-2 rounded-pill">
+                            <ul class="list-unstyled d-flex align-items-center gap-2">
+                                <li>
+                                    <img src="images/new-ds2-profile-icon.webp" class="d-block" alt="profile images">
+                                </li>
+                                <li class="fw-bold fs-6 text-light">Sign In</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container-fluid darkgrey d-none d-lg-block headingcategories">
+            <div class="container px-0">
+                <ul class="list-unstyled d-flex justify-content-between mb-0 fw-bold text-light">
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Groceries</a>
+                            <!-- Inner item list -->
+                            <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                                <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; max-height: 60vh;">
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Biscuits, Drinks & Packaged Foods</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Ice Cream & Frozen</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Chips & Namkeens</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Biscuits & Cookies</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Chocolates & Candies</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Indian Sweets</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Drinks & Juices</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Breakfast Cereals</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Noodles, Pasta & Vermicelli</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Ready To Cook & Eat</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Spread, Sauces & Ketchup</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Pickles, Chutney & Flavouring</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Tea & Coffee</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Fruits & Vegetables</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Fresh Fruits</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Basic Vegetables</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Roots, Herbs & Others</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Cooking Essentials</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Atta, Flours & Sooji</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dals & Pulses</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Rice</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Sabudana, Poha & Murmura</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Edible Oils</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Masala, Spices & Mukhwas</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Salt, Sugar & Jaggery</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Wheat & Soya</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Ghee</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dry Fruits & Nuts</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Millets & Other Grains</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Combo Offers</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Dairy & Bakery</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Milk & Milk Products</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cheese, Paneer & Tofu</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Toast & Khari</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cakes & Muffins</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Breads & Buns</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bakery Snacks</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Personal Care</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Hair Care</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bath & Hand Wash</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Oral Care</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Skin Care</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Feminine Hygiene</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Men's Grooming</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Deo & Fragrances</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Health & Wellness</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Beauty</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Face</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Nails & Lips</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Eyes</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Mom & Baby Care</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Diapers & Wipes</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bath, Hygiene & Grooming</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Food & Feeding</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bedding, Toys & Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Home</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Detergents & Cleaners</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dishwash</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Fresheners & Repellents</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home & Cleaning Tools</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Pooja Needs</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Basic Electricals</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Shoe Care</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags & Travel Luggage</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Kitchenware</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Gas Stov</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Pots & Pans</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Containers & Storage</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Flask, Bottle & Tiffin Boxes</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cutting & Chopping</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Kitchen Tools</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Tableware</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dining</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Serveware</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cups, Mugs & More</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cutlery</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Barware</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">School, Office & Stationery</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Notebooks & Paper Products</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Writing Instruments & Accessories</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">School Supplies</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Office Supplies</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Party Accessories</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Art, Craft & Hobby</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">                                
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Disposables</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Food Wrapping Essentials</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Plates & Cutlery</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Tissues & Napkins</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Crafts of India</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Notebooks & Paper Products</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Fashion Jewellery</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Imitation Jewellery</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Home & Lifestyle</a>
+                             <!-- Inner item list -->
+                             <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                                <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="height: 60vh; width: 250px;">
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Kitchenware</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cookware</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cookers & Steamers</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Gas Stove</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Pots & Pans</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Containers & Storage</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Flask, Bottle & Tiffin Boxes</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cutting & Chopping</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Kitchen Tools</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bakeware</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Home Furnishing</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bedding</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Curtains & Accessories</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bathroom Linen</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cushions & Cushion Covers</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Kitchen Linens</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Slipcovers & Diwan Set</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Umbrellas & Raincoats</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Mats, Rugs & Carpets</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Sports & Fitness</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cycles</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Fitness Equipment & Accessories</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Outdoor</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Indoor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Bags & Travel Luggage</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Trolleys & Suitcases</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Backpacks & Travel Luggage</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Travel Accessories</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Shopping & Other Bags</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Bathroom & Laundry Accessories</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Laundry Essentials</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Buckets, Mugs,Tubs & Stool</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bathroom Accessories</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Hooks, Clips & Hangers</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Home Decor</a>                                      
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Lights</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Decor Accents</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Fragrances</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Artificial Flora & Vases</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Decorative Stickers</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Festive Decor and Gifting</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Artwork</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Wind Chimes & Dream Catchers</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Photo Frames</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Candle Holders</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Mirrors</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Clocks & Wall Decor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Disposables</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Food Wrapping Essentials</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Hygiene</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Plates & Cutlery</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Tissues & Napkins</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Prayer & Spiritual Needs</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Lamp Oil</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Agarbatti</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Camphor</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dhoop</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Prayer Implements</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Lanterns</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Feng Shui</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Candles & Wicks</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Tableware</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dining</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Serveware</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cups, Mugs & more</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Glassware & Drinkware</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cutlery</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Barware</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Serving Aids</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Table Accessories</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none"> Furniture</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Seating</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Mattress</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Storage & Cabinets</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Tables</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Outdoor Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Kids Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Living & Dining</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Work & Study</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Healthcare Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Sofas & Couches</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dining Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Beds</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Lifestyle Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bedroom & Others</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Bar Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Others</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Toys & Games</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Toy Vehicles & Ride-Ons</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Indoor & Board Games</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Learning & Education</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Outdoor Games</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">                                
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">DIY</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Auto Care</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Batteries & Electricals</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Ladder</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Safety & Security</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Garden & Outdoor</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Gardening</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Insect & Animal Control</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Barbeque</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Outdoor Decor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Home Care</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Clothesline & Clips</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Invertor Trolley</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Key Holders & Hooks</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Storage & Organisers</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Crafts of India</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Indoor & Board Games</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Decor</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Furnishing</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Furnishing</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Furniture</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Backpacks & Travel Luggage</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Outdoor Decor</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">                                
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Books</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Literature & Fiction</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Professional</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Non Fiction Books</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Specialised</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Handloom & Handicraft</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Furnishing</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Pooja Needs</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                        <a href="" class="text-dark text-opacity-75 text-decoration-none">Pet Care</a>
+                                        <!-- InnerSub item list -->
+                                        <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                            <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Birds</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Cats</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Dogs</a>
+                                                </li>
+                                                <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                    <a href="" class=" text-decoration-none text-dark text-opacity-75">Others</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Electronics</a>
+                         <!-- Inner item list -->
+                        <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                            <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="height:60vh; width: 250px;">
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Mobiles & Tablets</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Mobiles</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Tablets & eReaders</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Charger & Powerbanks</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Computers & Accessories</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Laptops & Desktops</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Printers & Inks</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Storage</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">IT Peripherals & Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">TV & Home Entertainment</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Televisions</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Television Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Audio</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Gaming</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Large Appliances</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Air Conditioners</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Refrigerators</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Washing Machines</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Microwave OTG & Air Fryers</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Audio & Smart Home</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Headphones & Earbuds</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bluetooth & Smart Speakers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Karaoke & Radio</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Smart Home Devices</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Home Appliances</a>      
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Fans & Air Coolers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Water Purifiers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Irons & Steamers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Geysers & Heaters</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Vacuum Cleaners</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Air Purifiers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Invertors & Stabilizers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Sewing Machines</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Kitchen Appliances</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Breakfast Appliances</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Cooking Appliances</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Juicers & Mixer Grinders</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Chimneys & Hobs</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Wearables & Smart Tech</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Smart Watches</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Smart Watch Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Smart Tags</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Smart Glasses & VR Headset</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Personal Care & Grooming Appliances</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Shavers & Trimmers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Hair Dryers & Stylers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Fitness & Massagers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Health & Oral Care</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Camera & Musical Instruments</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Camera</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Musical Instruments</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Fashion</a>
+                         <!-- Inner item list -->
+                        <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                            <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; max-height:60vh">
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Men</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:inherit;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Western Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Inner Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ethnic Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Footwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Night & Loungewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Night & Lounge Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Clothing Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watches</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Eyewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags, Belts & Wallets</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Gemstones Coins & Bars</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Silver Jewellery</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Timewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watch Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Women</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ethnic Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Western Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Footwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags, Belts & Wallets</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watches</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Eyewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Lingerie & Innerwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Night & Loungewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Night & Lounge Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Clothing Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Gemstones Coins & Bars</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Silver Jewellery</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Fusion Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Fashion Jewellery</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Timewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags, Belts & Wallets</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Precious Articles</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Handloom & Handicraft</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Boys</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Western Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ethnic Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Footwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Night & Loungewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Inner Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Clothing Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags, Belts & Wallets</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watches</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Eyewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watch Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Inner & Nightwear</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Girls</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Western Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ethnic Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Footwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Night & Loungewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Inner Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Clothing Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags, Belts & Wallets</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watches</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Eyewear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Watch Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Inner & Nightwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bags, Belts & Wallets</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Infants</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Western Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Clothing Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Footwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ethnic Wear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Inner & Nightwear</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Tech</a>      
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Smart Wearables</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Crafts of India</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Footwear</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Women</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Industrial & Professional <br> Suppliers</a>
+                         <!-- Inner item list -->
+                        <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                            <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; height:60vh">
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Auto Care</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Car Electronics</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Car & Bike Parts</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Car & Bike Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Helmets & Riding Gear</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Industrial Supplies</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Power & Hand Tools</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Medical Equipment, Furniture & Supplies</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Material Handling & Storage</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Test, Measure & Inspect</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Lab & Scientific Products</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Mechanical Supplies</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Retail Shop Display & Supplies</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Industrial Chemicals</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Home Cleaning & Organisation</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Cleaning Tools</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Closet Organization Systems</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Key Holders</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Electrical & Electronic Components</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Wires, Cables & Wall Plates</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Door Bells & Transformers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Breakers, Load Centers & Fuses</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Robotics & Electronic Components</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Building Supplies & Tools</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Kitchen Fixtures</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bathroom Fixtures & Accessories</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Water Filtration & Softeners</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Tiles & Flooring</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Gating & Railing</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Hardware</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Plumbing</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Paint, Wall Paper & Supplies</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Carpentry</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Furniture & Wood Treatment</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Doors & Windows</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Carpentry Adhesives</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Cabinet Hardware</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Brackets, Nails, Planers & Blades</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Security, Safety & Automation</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Home Safety & Automation</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Security & Safety Products</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Personal Protective Equipment</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Electrical</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Mosquito Bat</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Building Supplies & Measuring Tools</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Tiles</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Hardware & Plumbing</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Shelf Brackets</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Nails & Screws</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Precious Jewellery</a>
+                         <!-- Inner item list -->
+                         <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom end-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                            <ul class="list-unstyled pe-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; height:60vh">
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Fine Jewellery</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Silver Jewellery</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Gold Coins & Bars</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Silver Coins & Bars</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Gold Jewellery</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Silver Articles & Idols</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Diamond Jewellery</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Jewellery</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled pe-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Fine Jewellery</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">Wellness</a>
+                         <!-- Inner item list -->
+                         <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom end-0 top-100 pb-4 blackbgonhoverondropdown" style="z-index: 999999; background-color: #f5f5f5 !important;">
+                            <ul class="list-unstyled pe-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; height:60vh">
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Personal Care</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75"> Oral Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Face Personal Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Home & Health</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Bath & Shower</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Senior Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Body Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Hands & Feet</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Lip Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Personal Care Tools & Accessories</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Fitness</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled pe-2 deScrollwidth" style="width: 250px; height: 60vh;">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Health Food And Drinks</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Family Nutrition</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ayurvedic Supplements</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Vitamins And Supplements</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Sports Supplements</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Weight Management</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Skin Care</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Masks</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Toners & Serums</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Face Skin Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Aromatherapy</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Moisturizers</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Sunscreen</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Cleansers</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Ayush</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Ayurvedic</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Unani</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Siddha</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Mom & Baby</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Baby Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Maternity Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Baby Bath Time</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Feminine Hygiene</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Hair</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Hair Care</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Hair Color</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Scalp Treatments</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Wellness</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Health - Supplements</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Fragrances</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Women</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Unisex</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Men</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Covid Essentials</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Personal & Home Essentials</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Business Essentials</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Men's Grooming</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Shaving</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Beard Care</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Make-Up</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Eyes</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Lips</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Make-Up Tools & Brushes</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Treatments</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Pain Relief Application</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Stomach Discomfort</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pe-5 py-2 ps-3 lh-sm rounded-start-0 rounded-end-5 menuitemhovereffect">
+                                    <a href="" class="text-dark text-opacity-75 text-decoration-none">Tools & Appliances</a>
+                                    <!-- InnerSub item list -->
+                                    <div class="position-absolute top-0 inner-itemlist bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999; left: -100%;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Massage Tools</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Face/Skin Tools</a>
+                                            </li>
+                                            <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
+                                                <a href="" class=" text-decoration-none text-dark text-opacity-75">Hair Styling Tools</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="position-relative d-flex align-items-center py-1 lightblueBB" id="headeritemlist">
+                        <a href="" class="text-light text-decoration-none">All Categories</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="container-fluid py-3 py-xxl-5">
+            <div class="container">
+                <div class="owl-carousel owl-theme position-relative">
+                    <div class="item">
+                        <figure>
+                            <img src="images/1744469255_oppo.webp" alt="Mobile and electronic fest" class="rounded-top-5">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/1744469344_summer_deals.webp" alt="1744469344_summer_deals" class="rounded-top-5">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/1744469390_iphone_16.webp" alt="1744469390_iphone_16" class="rounded-top-5">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/1744469612_grocery_super_saver.webp" alt="1744469612_grocery_super_saver" class="rounded-top-5">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/1744469659_appliance_cover.webp" alt="1744469659_appliance_cover" class="rounded-top-5">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/1744216435_celebrate_in_style.webp" alt="1744216435_celebrate_in_style" class="rounded-top-5">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid">
+            <div class="container">
+                <figure class="w-100">
+                    <img src="images/unlimited deals.webp" alt="unlimited deals" class="img-fluid rounded-4">
+                </figure>
+            </div>
+        </section>
+        <section class=""></section>
+    </main>
+</body>
+<!-- jQuery (must come first) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- GSAP (optional if you use it) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"></script>
+
+<!-- Your custom JS -->
+<script src="js/app.js"></script>
+
+</html>
