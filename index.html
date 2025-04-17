@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="style/media.css" type="text/css">
 </head>
 <body>
+    <!-- 100vh backscreen whel model is open -->
     <div class="popoverbg-dark position-fixed border border-1 border-danger start-0 top-0 bg-black opacity-25 d-none z-3"
         style="width: 100%; height: 100%;"></div>
     <header class="container-fluid bluecolor py-3 px-2 px-md-0 mx-0 z-5 position-sticky z-3">
@@ -120,7 +121,7 @@
                                 <li class="cursorpointer d-block d-lg-none" id="mobilelistbutton">
                                     <img src="images/ds-list-icon.webp" class="d-block" alt="ds-list-icon">
                                 </li>
-                                <div class="inputPopover p-3 bg-light rounded-4 vh-100 d-none z-3">
+                                <div class="inputPopover p-3 bg-light rounded-4 d-none z-3" style="height: 70vh;">
                                     <div class="w-auto">
                                         <h3 class="fs-6 fw-bolder">Try something new</h3>
                                         <ul class="list-unstyled d-flex flex-wrap w-100 column-gap-1 row-gap-2">
@@ -283,6 +284,7 @@
         </div>
     </header>
     <main>
+        <!-- Multilevel Dropdown -->
         <section class="container-fluid darkgrey d-none d-lg-block headingcategories">
             <div class="container px-0">
                 <ul class="list-unstyled d-flex justify-content-between mb-0 fw-bold text-light">
@@ -290,7 +292,7 @@
                         <a href="" class="text-light text-decoration-none">Groceries</a>
                             <!-- Inner item list -->
                             <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
-                                <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; max-height: 60vh;">
+                                <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="height: 60vh; width: 250px;">
                                     <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
                                         <a href="" class="text-dark text-opacity-75 text-decoration-none">Biscuits, Drinks & Packaged Foods</a>
                                         <!-- InnerSub item list -->
@@ -1343,12 +1345,12 @@
                         <a href="" class="text-light text-decoration-none">Fashion</a>
                          <!-- Inner item list -->
                         <div class="header-item position-absolute bg-danger text-dark text-opacity-75 top mt-1 rounded-bottom start-0 top-100 pb-4" style="z-index: 999999; background-color: #f5f5f5 !important;">
-                            <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; max-height:60vh">
+                            <ul class="list-unstyled ps-2 py-3 overflow-y-scroll hidescrollbar" style="width: 250px; height:60vh">
                                 <li class="pe-5 py-2 ps-3 lh-sm menuitemhovereffect">
                                     <a href="" class="text-dark text-opacity-75 text-decoration-none">Men</a>
                                     <!-- InnerSub item list -->
                                     <div class="position-absolute top-0 inner-itemlist start-100 bg-white sublistitem pb-4 rounded-bottom" style="z-index:99999;">
-                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:inherit;">
+                                        <ul class="py-3 fw-bold overflow-y-scroll list-unstyled ps-2 deScrollwidth" style="width: 250px; height:60vh">
                                             <li class="pe-5 py-2 ps-3 lh-sm changefonntonHover">
                                                 <a href="" class=" text-decoration-none text-dark text-opacity-75">Western Wear</a>
                                             </li>
@@ -2113,9 +2115,10 @@
                 </ul>
             </div>
         </section>
+        <!-- Owl Carousel first -->
         <section class="container-fluid py-3 py-xxl-5">
             <div class="container">
-                <div class="owl-carousel owl-theme position-relative">
+                <div class="owl-carousel owl-theme position-relative" id="first-carousel">
                     <div class="item">
                         <figure>
                             <img src="images/1744469255_oppo.webp" alt="Mobile and electronic fest" class="rounded-top-5">
@@ -2149,6 +2152,7 @@
                 </div>
             </div>
         </section>
+        <!-- Unmissable Deal -->
         <section class="container-fluid">
             <div class="container">
                 <figure class="w-100">
@@ -2156,7 +2160,60 @@
                 </figure>
             </div>
         </section>
-        <section class=""></section>
+        <!-- Lowest price ever Banner -->
+        <section class="container-fluid mt-5">
+            <div class="container">
+                <figure class="w-100">
+                    <img src="images/1744221842_1p_Web.webp" alt="unlimited deals" class="img-fluid rounded-4">
+                </figure>
+            </div>
+        </section>
+        <!-- Owl Carousel 2 -->
+        <section class="container-fluid py-3 py-xxl-5">
+            <div class="container">
+                <div class="owl-carousel owl-theme position-relative" id="second-carousel">
+                    <div class="item">
+                        <figure>
+                            <img src="images/sbicard1.webp" alt="credit card" class="rounded-4">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/sbicard2.webp" alt="sbicard2" class="rounded-4">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/sbi card3.webp" alt="sbicard3" class="rounded-4">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/paytm card.webp" alt="paytm-card" class="rounded-4">
+                        </figure>
+                    </div>
+                    <div class="item">
+                        <figure>
+                            <img src="images/phonepay.webp" alt="phonepay" class="rounded-4">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Electronic zone -->
+        <section class="container-fluid py-3 ultralightblueBg">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h2 class="mb-0 fw-bolder darkred"><strong>Electronics Zone</strong></h2>
+                    <p class="mb-0 lh-sm fw-bolder"><strong><a href="" class="text-darkBlue text-decoration-none">View All</a></strong></p>
+                </div>
+                <div class="row py-3">
+                    <div class="owl-carousel owl-theme position-relative electroniczonegetdatafromapi" id="electronicZone-Carousel">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 <!-- jQuery (must come first) -->

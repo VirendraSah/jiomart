@@ -1,5 +1,5 @@
 // Owl Carousel script
-$('.owl-carousel').owlCarousel({
+$('#first-carousel').owlCarousel({
     loop:true,
     margin:20,
     nav:true,
@@ -19,6 +19,30 @@ $('.owl-carousel').owlCarousel({
     }
 })
 // Owl Carousel end
+
+// Owl Carousel Second
+$('#second-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoplay:false,
+    dots:false,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+// Owl Carousel end
+
 
 
 const blackbg = document.querySelector(".popoverbg-dark");
@@ -80,6 +104,8 @@ let shoppingList=document.querySelector(".shoppingList")
 closeShoppinglist.addEventListener("click",()=>{
     shoppingList.classList.replace('d-block', 'd-none')
     blackbg.classList.replace("d-block", "d-none");
+    // add overflow-auto when users close the modal
+    $('body').css("overflow", "auto");
 })
 
 //itemtextarea increase height
@@ -156,13 +182,15 @@ pincodeInput.addEventListener("input", function () {
     changebordercolor.classList.replace("border-danger", "border-MediumDark");
   }
 });
-
+getuserpincode=document.querySelector(".getuserpincode")
 pincodesubmitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (isDeliveryAvailable) {
     deliverylocation.innerText = deliverylocation.innerText=`${District} ${pincode}`;
     blackbg.classList.replace("d-block", "d-none");
     getuserpincode.classList.replace("d-block", "d-none");
+    // add overflow-auto when users close the modal
+    $('body').css("overflow", "auto");
   }
 });
 
@@ -210,3 +238,63 @@ function errorCallback(error) {
   alert("Permission denied or unable to detect your location.");
 }
 
+// Electronic zone
+let electronicZoneproduct=document.querySelector(".electroniczonegetdatafromapi")
+async function electronicZone() {
+  let allproducts=""
+  let call= await fetch(`https://dummyjson.com/products/search?q=phone`)
+  let output=await call.json()
+  let products=output.products
+  products.forEach((product)=>{
+    let{title, images, description, price, discountPercentage}=product;
+    const firstImage = images[0]; // Get first image manually
+    let MRP= Math.round((price*100)/(100-discountPercentage))
+
+    // put api data into UI
+    allproducts+=`
+                    <div class="item">
+                            <div class="bg-white rounded-4">
+                                <figure class=" position-relative pt-3 px-3">
+                                    <img src="${firstImage}" alt="${title}" class="same-size-img">
+                                    <figure class="position-absolute bg-light rounded-circle d-flex align-items-center justify-content-center productloveimg">
+                                        <img src="images/download.webp" alt="white love" class="d-block pt-2" style="width: 20px;">
+                                    </figure>
+                                </figure>
+                                <div class="px-2 d-flex flex-column gap-2">
+                                    <p class="text-truncate2lines fw-bolder mb-0" style="font-size: 14px;">${description}</p>
+                                    <p class="fw-bold mb-0">₹${price}</p>
+                                    <div class="d-flex align-items-center justify-content-start pb-2 gap-2">
+                                        <p class="m-0 fw-bold" style="color: #b5b5b5; font-size: 14px;"><del>₹${MRP}.00</del></p>
+                                        <span class=" fw-bold text-success px-1 rounded-1" style="font-size: 12px; background-color: #e5f7ee;">${discountPercentage}% OFF</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                `
+  })
+  electronicZoneproduct.innerHTML=allproducts;
+
+  // Owl Carousel electronic Zone
+$('#electronicZone-Carousel').owlCarousel({
+  loop:false,
+  margin:15,
+  nav:true,
+  autoplay:false,
+  dots:false,
+  navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+  responsive:{
+      0:{
+          items:2
+      },
+      600:{
+          items:3
+
+      },
+      1000:{
+          items:6
+      }
+  }
+})
+// Owl Carousel end
+} 
+electronicZone()
