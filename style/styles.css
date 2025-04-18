@@ -198,30 +198,156 @@
     background-position: 0 0;
 }
 
-.owl-theme .owl-nav {
-    margin-top: -25px;
+
+/* Owl Carousel 4 GenZ Banner*/
+#gen-zCarousel .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
 }
 
-.owl-theme .owl-dots .owl-dot span {
-    background: #d3e8f1;
+#gen-zCarousel .owl-prev.disabled,
+#gen-zCarousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover :active {
-    width: 30px !important;
-    transition: 0.5s;
+#gen-zCarousel .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
 }
 
-.owl-theme .owl-dots .owl-dot {
-    transition: 0.5s;
-    transform-origin: right;
+#gen-zCarousel .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    background: #0078ad;
+#gen-zCarousel .prev-slide:hover {
+    background-position: 0px -53px;
 }
 
+#gen-zCarousel .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#gen-zCarousel .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#gen-zCarousel:hover .owl-nav {
+    opacity: 1;
+}
+
+#gen-zCarousel .prev-slide:hover,
+#gen-zCarousel .next-slide:hover {
+    background-position: 0 0;
+}
+/* Sun-sational banner */
+/* owl carousel two */
+#sun-sational .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
+}
+
+#sun-sational .owl-prev.disabled,
+#sun-sational .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#sun-sational .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
+}
+
+#sun-sational .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
+}
+
+#sun-sational .prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+#sun-sational .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#sun-sational .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#sun-sational:hover .owl-nav {
+    opacity: 1;
+}
+
+#sun-sational .prev-slide:hover,
+#sun-sational .next-slide:hover {
+    background-position: 0 0;
+}
+
+/* IceCream Corner */
+#IceCreamcorner .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
+}
+
+#IceCreamcorner .owl-prev.disabled,
+#IceCreamcorner .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#IceCreamcorner .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
+}
+
+#IceCreamcorner .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
+}
+
+#IceCreamcorner .prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+#IceCreamcorner .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#IceCreamcorner .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#IceCreamcorner:hover .owl-nav {
+    opacity: 1;
+}
+
+#IceCreamcorner .prev-slide:hover,
+#IceCreamcorner .next-slide:hover {
+    background-position: 0 0;
+}
 
 /* Custom CSS style */
 * {
@@ -506,6 +632,22 @@ input::-webkit-inner-spin-button {
 .same-size-img {
     width: 100%;
     height: 200px; /* or whatever fixed height you want */
-    object-fit: contain /* ensures it fills without distortion */
+    object-fit: contain; /* ensures it fills without distortion */
     border-radius: 12px; /* optional */
+  }
+
+  .spin-scale {
+    animation: spinScale 10s linear infinite;
+  }
+
+  @keyframes spinScale {
+    0% {
+      transform: scale(5) rotate(0deg);
+    }
+    50% {
+      transform: scale(5) rotate(180deg);
+    }
+    100% {
+      transform: scale(5) rotate(360deg);
+    }
   }
