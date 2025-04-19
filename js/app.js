@@ -65,7 +65,7 @@ $('#gen-zCarousel').owlCarousel({
   }
 })
 // Owl Carousel end
-// Owl Carousel Second
+// sunsational offer Banner
 $('#sun-sational').owlCarousel({
   loop: true,
   margin: 10,
@@ -83,6 +83,69 @@ $('#sun-sational').owlCarousel({
     },
     1000: {
       items: 3
+    }
+  }
+})
+// clearance sale
+$('#clearanceSale').owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: true,
+  autoplay: false,
+  dots: false,
+  navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 2
+
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+// Brand product for Brand Love
+$('#BrandProduct').owlCarousel({
+  loop: false,
+  margin: 15,
+  nav: true,
+  autoplay: false,
+  dots: false,
+  navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+  responsive: {
+    0: {
+      items: 2
+    },
+    600: {
+      items: 3
+
+    },
+    1000: {
+      items: 6
+    }
+  }
+})
+// Brand product for Brand Love
+$('#VideoSection').owlCarousel({
+  loop: false,
+  margin: 15,
+  nav: true,
+  autoplay: false,
+  dots: false,
+  navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 2
+
+    },
+    1000: {
+      items: 4
     }
   }
 })
@@ -351,36 +414,37 @@ async function groceriesProduct() {
   let data = await jsondata.json()
   let allproducts = data.products
   allproducts.forEach((product) => {
-    let { description, discountPercentage, price, thumbnail,title } = product;
+    let { description, discountPercentage, price, thumbnail, title } = product;
     let MRP = Math.round((price * 100) / (100 - discountPercentage))
-    console.log(description, discountPercentage, price, thumbnail)
-    console.log(MRP)
 
     // put api data into UI
     finalproductlist += `
                     <div class="item">
                             <div class="bg-white rounded-4">
-                                <figure class=" position-relative pt-3 px-3">
-                                    <img src="${thumbnail}" alt="${title}" class="same-size-img">
-                                    <figure class="position-absolute bg-light rounded-circle d-flex align-items-center justify-content-center productloveimg">
-                                        <img src="images/download.webp" alt="white love" class="d-block pt-2" style="width: 20px;">
-                                    </figure>
+                              <figure class=" position-relative pt-3 px-3">
+                                <img src="${thumbnail}" alt="${title}" class="same-size-img">
+                                <figure class="position-absolute bg-light rounded-circle d-flex align-items-center justify-content-center productloveimg">
+                                  <img src="images/download.webp" alt="white love" class="d-block pt-2" style="width: 20px;">
                                 </figure>
-                                <div class="px-2 d-flex flex-column gap-2">
-                                    <p class="text-truncate2lines fw-bolder mb-0" style="font-size: 14px;">${description}</p>
-                                    <p class="fw-bold mb-0">₹${price}</p>
-                                    <div class="d-flex align-items-center justify-content-start pb-2 gap-2">
-                                        <p class="m-0 fw-bold" style="color: #b5b5b5; font-size: 14px;"><del>₹${MRP}.00</del></p>
-                                        <span class=" fw-bold text-success px-1 rounded-1" style="font-size: 12px; background-color: #e5f7ee;">${discountPercentage}% OFF</span>
-                                    </div>
+                              </figure>
+                              <div class="px-2 d-flex flex-column gap-2">
+                                <p class="text-truncate2lines fw-bolder mb-0" style="font-size: 14px;">${description}</p>
+                                <p class="fw-bold mb-0">₹${price}</p>
+                                <div class="d-flex align-items-center justify-content-start pb-2 gap-2">
+                                  <p class="m-0 fw-bold" style="color: #b5b5b5; font-size: 14px;"><del>₹${MRP}.00</del></p>
+                                  <span class=" fw-bold text-success px-1 rounded-1" style="font-size: 12px; background-color: #e5f7ee;">${discountPercentage}% OFF</span>
                                 </div>
+                              </div>
+                              <div class="w-100 d-flex align-items-center justify-content-center p-2">
+                                <button class="btn rounded-pill removehoverEffect fw-semibold text-darkBlue fw-bolder w-100">Add</button>
+                              </div>
                             </div>
-                        </div>
+                    </div>
                 `
 
   })
   groceries.innerHTML = finalproductlist
-  // Owl Carousel electronic Zone
+  // Groceries Zone
   $('#IceCreamcorner').owlCarousel({
     loop: false,
     margin: 15,
@@ -403,3 +467,100 @@ async function groceriesProduct() {
   })
 }
 groceriesProduct()
+
+const videoWrappers = document.querySelectorAll('.video');
+
+videoWrappers.forEach(wrapper => {
+  const video = wrapper.querySelector('video');
+  const playBtn = wrapper.querySelector('.video-btns');
+  const soundBtn = wrapper.querySelector('.soundbtn');
+  const soundImg = soundBtn?.querySelector('img');
+
+  // Force mute initially
+  video.muted = true;
+
+  // On hover play
+  wrapper.addEventListener('mouseenter', () => {
+    video.play();
+    if (playBtn) playBtn.style.display = 'none';
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0;
+    if (playBtn) playBtn.style.display = 'block';
+  });
+
+  // Toggle sound on click
+  soundBtn?.addEventListener('click', () => {
+    video.muted = !video.muted;
+    if (video.muted) {
+      soundImg.src = 'images/sound-off.svg';
+      soundImg.alt = 'sound-off';
+    } else {
+      soundImg.src = 'images/sound on.svg';
+      soundImg.alt = 'sound on';
+    }
+  });
+});
+
+// Electronic zone
+let fashioncollectionfromapi = document.querySelector(".fashioncollectionfromapi")
+async function fashioncollection() {
+  let allproducts = ""
+  let call = await fetch(`https://dummyjson.com/products/search?q=fashion`)
+  let output = await call.json()
+  let products = output.products
+  products.forEach((product) => {
+    let { title, images, description, price, discountPercentage } = product;
+    const firstImage = images[0]; // Get first image manually
+    let MRP = Math.round((price * 100) / (100 - discountPercentage))
+
+    // put api data into UI
+    allproducts += `
+                    <div class="item">
+                            <div class="bg-white rounded-4">
+                                <figure class=" position-relative pt-3 px-3">
+                                    <img src="${firstImage}" alt="${title}" class="same-size-img">
+                                    <figure class="position-absolute bg-light rounded-circle d-flex align-items-center justify-content-center productloveimg">
+                                        <img src="images/download.webp" alt="white love" class="d-block pt-2" style="width: 20px;">
+                                    </figure>
+                                </figure>
+                                <div class="px-2 d-flex flex-column gap-2">
+                                    <p class="text-truncate2lines fw-bolder mb-0" style="font-size: 14px;">${description}</p>
+                                    <p class="fw-bold mb-0">₹${price}</p>
+                                    <div class="d-flex align-items-center justify-content-start pb-2 gap-2">
+                                        <p class="m-0 fw-bold" style="color: #b5b5b5; font-size: 14px;"><del>₹${MRP}.00</del></p>
+                                        <span class=" fw-bold text-success px-1 rounded-1" style="font-size: 12px; background-color: #e5f7ee;">${discountPercentage}% OFF</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                `
+  })
+  fashioncollectionfromapi.innerHTML = allproducts;
+
+  // fashioncollection
+  $('#fashioncollection').owlCarousel({
+    loop: false,
+    margin: 15,
+    nav: true,
+    autoplay: false,
+    dots: false,
+    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    responsive: {
+      0: {
+        items: 2
+      },
+      600: {
+        items: 3
+
+      },
+      1000: {
+        items: 6
+      }
+    }
+  })
+  // Owl Carousel end
+}
+fashioncollection()

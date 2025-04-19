@@ -248,8 +248,8 @@
 #gen-zCarousel .next-slide:hover {
     background-position: 0 0;
 }
+
 /* Sun-sational banner */
-/* owl carousel two */
 #sun-sational .nav-btn {
     height: 47px;
     position: absolute;
@@ -346,6 +346,205 @@
 
 #IceCreamcorner .prev-slide:hover,
 #IceCreamcorner .next-slide:hover {
+    background-position: 0 0;
+}
+
+/* clearanceSale banner */
+#clearanceSale .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
+}
+
+#clearanceSale .owl-prev.disabled,
+#clearanceSale .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#clearanceSale .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
+}
+
+#clearanceSale .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
+}
+
+#clearanceSale .prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+#clearanceSale .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#clearanceSale .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#clearanceSale:hover .owl-nav {
+    opacity: 1;
+}
+
+#clearanceSale .prev-slide:hover,
+#clearanceSale .next-slide:hover {
+    background-position: 0 0;
+}
+/* Brand Products Deal Section */
+#BrandProduct .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
+}
+
+#BrandProduct .owl-prev.disabled,
+#BrandProduct .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#BrandProduct .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
+}
+
+#BrandProduct .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
+}
+
+#BrandProduct .prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+#BrandProduct .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#BrandProduct .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#BrandProduct:hover .owl-nav {
+    opacity: 1;
+}
+
+#BrandProduct .prev-slide:hover,
+#BrandProduct .next-slide:hover {
+    background-position: 0 0;
+}
+
+/* Video Section */
+#VideoSection .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
+}
+
+#VideoSection .owl-prev.disabled,
+#VideoSection .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#VideoSection .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
+}
+
+#VideoSection .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
+}
+
+#VideoSection .prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+#VideoSection .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#VideoSection .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#VideoSection:hover .owl-nav {
+    opacity: 1;
+}
+
+#VideoSection .prev-slide:hover,
+#VideoSection .next-slide:hover {
+    background-position: 0 0;
+}
+
+/* Owl Carousel 3 fashioncollection*/
+#fashioncollection .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    opacity: 1;
+}
+
+#fashioncollection .owl-prev.disabled,
+#fashioncollection .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+#fashioncollection .prev-slide {
+    background: url(../images/leftbtn.svg) no-repeat scroll 0 0;
+    left: 24px;
+    top: 40% !important;
+}
+
+#fashioncollection .next-slide {
+    background: url(../images/rightbtn.svg) no-repeat scroll 0 0;
+    right: 24px;
+    top: 40% !important;
+}
+
+#fashioncollection .prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+#fashioncollection .next-slide:hover {
+    background-position: -24px -53px;
+}
+
+#fashioncollection .owl-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#fashioncollection:hover .owl-nav {
+    opacity: 1;
+}
+
+#fashioncollection .prev-slide:hover,
+#fashioncollection .next-slide:hover {
     background-position: 0 0;
 }
 
@@ -629,25 +828,166 @@ input::-webkit-inner-spin-button {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .same-size-img {
     width: 100%;
-    height: 200px; /* or whatever fixed height you want */
-    object-fit: contain; /* ensures it fills without distortion */
-    border-radius: 12px; /* optional */
-  }
+    height: 200px;
+    /* or whatever fixed height you want */
+    object-fit: contain;
+    /* ensures it fills without distortion */
+    border-radius: 12px;
+    /* optional */
+}
 
-  .spin-scale {
+.spin-scale {
     animation: spinScale 10s linear infinite;
-  }
+}
 
-  @keyframes spinScale {
+@keyframes spinScale {
     0% {
-      transform: scale(5) rotate(0deg);
+        transform: scale(5) rotate(0deg);
     }
+
     50% {
-      transform: scale(5) rotate(180deg);
+        transform: scale(5) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(5) rotate(360deg);
+    }
+}
+
+
+.imgpop {
+    animation: imgpop 5s ease-in-out infinite;
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  @keyframes imgpop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    5% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+    8% {
+      transform: scale(1);
+    }
+    95% {
+      transform: scale(1);
+      opacity: 1;
     }
     100% {
-      transform: scale(5) rotate(360deg);
+      transform: scale(0);
+      opacity: 0;
     }
   }
+  
+  .effectonlimitedimg {
+    animation: transitioneffect 5s ease-in-out infinite;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: left;
+  }
+  
+  @keyframes transitioneffect {
+    0% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 0;
+      transform: scale(0); /* before imgpop reaches scale(1) */
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    85% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    92.1% {
+      opacity: 0;
+      transform: scale(0); /* right after imgpop starts shrinking */
+      transform-origin: left;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  .timeonlyanimation {
+    animation: timeonlyanimation 5s ease-in-out infinite;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+  }
+  
+  @keyframes timeonlyanimation {
+    0% {
+      opacity: 0;
+      transform: scale(0) translateY(0%);
+    }
+    7.9% {
+      opacity: 0;
+      transform: scale(0) translateY(0%);
+    }
+    8% {
+      opacity: 1;
+      transform: scale(0) translateY(-50%);
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1) translateY(50%);
+    }
+    12% {
+      opacity: 1;
+      transform: scale(1) translateY(0%);
+    }
+    87.9% {
+      opacity: 1;
+      transform: scale(1) translateY(0%);
+    }
+    88.5% {
+      opacity: 0;
+      transform: scale(0) translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0) translateY(0%);
+    }
+  }
+
+  .video-btns{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .soundbtn{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .footerlist li a{
+    color: #565656;
+    font-weight: bold;
+  }
+  .footerlist li{
+    padding: 5px;
+  }
+  .footerlist li:hover{
+    background-color: #e0e0e0;
+  }
+  .text-underline:hover{
+    text-decoration: underline !important;
+  }
+  
+  
+  
+  
+  
