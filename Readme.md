@@ -61,9 +61,5 @@ https://geocode.maps.co/reverse?lat=<lat>&lon=<lon>&api_key=...
 
 Replace the API key if necessary.
 
-## 📸 Preview
-![JioMart Clone Screenshot](images/jiomartscreenshot.png)
-
-
 📄 License
 This project is for educational/demo purposes only. All trademarks and visuals belong to their respective owners.git sta
